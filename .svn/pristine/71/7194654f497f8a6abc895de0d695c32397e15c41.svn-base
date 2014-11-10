@@ -1,0 +1,65 @@
+package com.cooby.news.ui.login;
+
+import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
+
+import com.cooby.news.R;
+import com.cooby.news.ui.login.LoginFragment.OnRegiterListener;
+
+public class LoginActivity extends ActionBarActivity{
+	private FragmentTransaction ft;
+	private LoginFragment lo;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		this.setContentView(R.layout.login_activity);
+		
+		ft = getSupportFragmentManager().beginTransaction();
+		
+		lo = new LoginFragment();
+		lo.setOnRegiterListener(new OnRegiterListener(){
+			public void OnClick() {
+				RegiterFragment rf = new RegiterFragment();
+				ft.replace(R.id.main,rf);
+				ft.addToBackStack(null);
+				ft.commit();
+			}
+		});
+		ft.replace(R.id.main,lo);
+		ft.addToBackStack(null);
+		ft.commit();
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

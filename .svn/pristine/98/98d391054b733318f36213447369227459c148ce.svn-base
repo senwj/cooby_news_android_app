@@ -1,0 +1,22 @@
+package com.cooby.news.bean;
+
+public class URLs {
+	public final static String HOST = "www.18kszx.com";
+	public final static String HTTP = "http://";
+
+	/**
+	 * 登录
+	 */
+	public final static String login = HTTP + HOST + "/login";
+	/**
+	 * 注册
+	 */
+	public final static String register = HTTP + HOST + "/addMember";
+
+	public static String getServiceURL(String method) {
+		StringBuilder url = new StringBuilder();
+		url.append(HTTP).append(HOST).append("/").append("/services/")
+				.append(method);
+		return url.toString();
+	}
+}
