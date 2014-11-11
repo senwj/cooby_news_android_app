@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -45,11 +44,12 @@ public class RegiterFragment extends Fragment implements View.OnClickListener{
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
-			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+			 ViewGroup container,  Bundle savedInstanceState) {
 		mActivity =  (ActionBarActivity) getActivity();
 		ac = (AppContext) mActivity.getApplication();
 		ActionBar actionBar =mActivity.getSupportActionBar();
-		actionBar.setTitle("注册");
+		TextView head_title=(TextView)actionBar.getCustomView().findViewById(R.id.head_title);
+		head_title.setText("注册");
 
 		View view = inflater.inflate(R.layout.login_register_fragment,null);
 		iniFreamView(view);
@@ -128,7 +128,7 @@ public class RegiterFragment extends Fragment implements View.OnClickListener{
 				l.dismiss();
 				switch(msg.what){
 				case 1:
-					getFragmentManager().popBackStack();
+					mActivity.getSupportFragmentManager().popBackStack();
 					break;
 				case 0:
 					UIHelper.ToastMessage(mActivity, msg.obj.toString());

@@ -68,7 +68,7 @@
     </style>
 
     <style name="ActionBarArrow">
-        <item name="android:background">@drawable/selectable_background_example</item>
+        <item name="android:background">@drawable/base_action_bar_icon_background_selector</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:src">@drawable/base_action_bar_back</item>

@@ -3,7 +3,6 @@ package com.cooby.news.ui.login;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -11,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.cooby.news.AppContext;
 import com.cooby.news.AppException;
@@ -39,10 +39,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
-			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+			 ViewGroup container,  Bundle savedInstanceState) {
 		mActivity =  (ActionBarActivity) getActivity();
 		ActionBar actionBar =mActivity.getSupportActionBar();
-		actionBar.setTitle("登录");
+		TextView head_title=(TextView)actionBar.getCustomView().findViewById(R.id.head_title);
+		head_title.setText("登录");
 		
 		View view = inflater.inflate(R.layout.login_fragment, null);
 		initView(view);
