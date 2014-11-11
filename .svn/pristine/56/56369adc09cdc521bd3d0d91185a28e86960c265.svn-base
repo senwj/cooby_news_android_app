@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ActionBar" >
+
+    <ImageView
+        android:id="@+id/action_bar_back"
+        style="@style/ActionBarArrow"
+        android:padding="10dip" />
+
+    <TextView
+        android:id="@+id/head_title"
+        style="@style/head_title"
+        android:text="dfff" />
+
+</FrameLayout>
